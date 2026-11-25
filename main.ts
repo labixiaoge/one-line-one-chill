@@ -23,6 +23,9 @@ if (chars < 1 || chars > 200) {
 if (LINE.trim().length === 0) {
   throw new Error("entry must not be only whitespace");
 }
+if (LINE.includes("\n") || LINE.includes("\r")) {
+  throw new Error("entry must be a single line");
+}
 if (!LINE.endsWith(".")) {
   throw new Error("entry must be a single sentence");
 }
